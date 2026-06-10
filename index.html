@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flight Fare Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>✈ Smart Flight Fare Analyzer</h1>
+
+    <form method="POST">
+
+        <input
+            type="text"
+            name="fares"
+            placeholder="Enter fares like 5500,3200,7800,4100"
+            required
+        >
+
+        <button type="submit">
+            Analyze Flights
+        </button>
+
+    </form>
+
+    {% if bubble_time is not none %}
+
+    <div class="results">
+
+        <h2>Algorithm Performance</h2>
+
+        <div class="card">
+            Bubble Sort : {{ bubble_time }} ms
+        </div>
+
+        <div class="card">
+            Insertion Sort : {{ insertion_time }} ms
+        </div>
+
+        <div class="card">
+            Merge Sort : {{ merge_time }} ms
+        </div>
+
+        <div class="winner">
+            🏆 Fastest Algorithm : {{ winner }}
+            <br>
+            Time Complexity : {{ complexity }}
+        </div>
+
+        <h2>Sorted Flight Fares</h2>
+
+        <div class="card">
+            {{ sorted_fares }}
+        </div>
+
+        <h2>Flight Insights</h2>
+
+        <div class="card">
+            💰 Cheapest Flight : ₹{{ cheapest }}
+        </div>
+
+        <div class="card">
+            💸 Highest Flight Fare : ₹{{ highest }}
+        </div>
+
+        <div class="card">
+            ⭐ Recommended Flight : ₹{{ recommended }}
+        </div>
+
+        <div class="card">
+            🎯 Potential Savings : ₹{{ savings }}
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
