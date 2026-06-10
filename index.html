@@ -6,8 +6,7 @@
     <title>Flight Fare Sorting Analyzer</title>
 
     <link rel="stylesheet"
-          href="{{ url_for('static',
-          filename='style.css') }}">
+          href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 
@@ -15,14 +14,14 @@
 
 <div class="container">
 
-    <h1>✈ Flight Fare Sorting Analyzer</h1>
+    <h1>✈ Smart Flight Fare Sorting Analyzer</h1>
 
     <form method="POST">
 
         <input
             type="text"
             name="fares"
-            placeholder="Enter fares like 5500,3200,7800,4100"
+            placeholder="Enter flight fares like 5500,3200,7800,4100"
             required
         >
 
@@ -36,7 +35,7 @@
 
     <div class="results">
 
-        <h2>Execution Times</h2>
+        <h2>Algorithm Performance</h2>
 
         <div class="card">
             Bubble Sort :
@@ -55,7 +54,7 @@
 
         <div class="winner">
 
-            Fastest Algorithm :
+            🏆 Fastest Algorithm :
             {{ winner }}
 
             <br><br>
@@ -68,9 +67,13 @@
         <h2>Sorted Flight Fares</h2>
 
         <div class="card">
-
             {{ sorted_fares }}
+        </div>
 
+        <h2>Cheapest Flight Fare</h2>
+
+        <div class="card">
+            ₹{{ cheapest }}
         </div>
 
     </div>
@@ -80,4 +83,5 @@
 </div>
 
 </body>
+
 </html>
