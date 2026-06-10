@@ -3,7 +3,7 @@ import time
 
 app = Flask(__name__)
 
-# ---------------- Bubble Sort ----------------
+# Bubble Sort
 def bubble_sort(arr):
     n = len(arr)
 
@@ -17,7 +17,7 @@ def bubble_sort(arr):
     return arr
 
 
-# ---------------- Insertion Sort ----------------
+# Insertion Sort
 def insertion_sort(arr):
 
     for i in range(1, len(arr)):
@@ -35,7 +35,7 @@ def insertion_sort(arr):
     return arr
 
 
-# ---------------- Merge Sort ----------------
+# Merge Sort
 def merge_sort(arr):
 
     if len(arr) <= 1:
@@ -78,6 +78,7 @@ def index():
 
     sorted_fares = None
     cheapest = None
+    highest = None
 
     if request.method == "POST":
 
@@ -85,7 +86,7 @@ def index():
 
         arr = list(map(int, fares.split(",")))
 
-        # Bubble Sort
+        # Bubble Sort Timing
         start = time.perf_counter()
 
         bubble_sort(arr.copy())
@@ -95,7 +96,7 @@ def index():
             6
         )
 
-        # Insertion Sort
+        # Insertion Sort Timing
         start = time.perf_counter()
 
         insertion_sort(arr.copy())
@@ -105,7 +106,7 @@ def index():
             6
         )
 
-        # Merge Sort
+        # Merge Sort Timing
         start = time.perf_counter()
 
         sorted_fares = merge_sort(arr.copy())
@@ -129,6 +130,7 @@ def index():
             complexity = "O(n²)"
 
         cheapest = min(sorted_fares)
+        highest = max(sorted_fares)
 
     return render_template(
         "index.html",
@@ -138,7 +140,8 @@ def index():
         winner=winner,
         complexity=complexity,
         sorted_fares=sorted_fares,
-        cheapest=cheapest
+        cheapest=cheapest,
+        highest=highest
     )
 
 

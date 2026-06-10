@@ -38,30 +38,21 @@
         <h2>Algorithm Performance</h2>
 
         <div class="card">
-            Bubble Sort :
-            {{ bubble_time }} ms
+            Bubble Sort : {{ bubble_time }} ms
         </div>
 
         <div class="card">
-            Insertion Sort :
-            {{ insertion_time }} ms
+            Insertion Sort : {{ insertion_time }} ms
         </div>
 
         <div class="card">
-            Merge Sort :
-            {{ merge_time }} ms
+            Merge Sort : {{ merge_time }} ms
         </div>
 
         <div class="winner">
-
-            🏆 Fastest Algorithm :
-            {{ winner }}
-
+            🏆 Fastest Algorithm : {{ winner }}
             <br><br>
-
-            Time Complexity :
-            {{ complexity }}
-
+            Time Complexity : {{ complexity }}
         </div>
 
         <h2>Sorted Flight Fares</h2>
@@ -74,6 +65,12 @@
 
         <div class="card">
             ₹{{ cheapest }}
+        </div>
+
+        <h2>Highest Flight Fare</h2>
+
+        <div class="card">
+            ₹{{ highest }}
         </div>
 
     </div>
