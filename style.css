@@ -2,31 +2,35 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-    background: linear-gradient(135deg,#4f46e5,#7c3aed);
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
+    background:linear-gradient(135deg,#141e30,#243b55);
     padding:20px;
 }
 
 .container{
-    background:white;
-    width:700px;
+    width:800px;
     max-width:100%;
-    padding:30px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.2);
     border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    padding:30px;
+    color:white;
+    box-shadow:0 8px 32px rgba(0,0,0,0.3);
 }
 
 h1{
     text-align:center;
-    color:#4f46e5;
     margin-bottom:25px;
+    color:#00e5ff;
+    letter-spacing:1px;
 }
 
 form{
@@ -36,30 +40,38 @@ form{
 }
 
 input{
-    padding:12px;
-    border:2px solid #ddd;
+    padding:14px;
+    border:none;
     border-radius:10px;
     font-size:16px;
+    background:rgba(255,255,255,0.15);
+    color:white;
+}
+
+input::placeholder{
+    color:#d1d1d1;
 }
 
 input:focus{
     outline:none;
-    border-color:#4f46e5;
+    border:2px solid #00e5ff;
 }
 
 button{
-    background:#4f46e5;
-    color:white;
+    padding:14px;
     border:none;
-    padding:12px;
     border-radius:10px;
+    background:#00e5ff;
+    color:#111;
     font-size:16px;
+    font-weight:bold;
     cursor:pointer;
     transition:0.3s;
 }
 
 button:hover{
-    background:#3730a3;
+    transform:translateY(-2px);
+    background:#00c4db;
 }
 
 .results{
@@ -67,24 +79,58 @@ button:hover{
 }
 
 .result-card{
-    background:#f8fafc;
-    padding:15px;
+    background:rgba(255,255,255,0.12);
+    padding:18px;
     border-radius:12px;
-    margin-bottom:10px;
-    border-left:5px solid #4f46e5;
+    margin-bottom:15px;
+    transition:0.3s;
+}
+
+.result-card:hover{
+    transform:scale(1.02);
 }
 
 .result-card h3{
-    color:#4f46e5;
-    margin-bottom:5px;
+    color:#00e5ff;
+    margin-bottom:8px;
+}
+
+.result-card p{
+    font-size:18px;
+    font-weight:500;
+}
+
+.result-card small{
+    color:#ddd;
 }
 
 .winner{
-    margin-top:15px;
-    background:#dcfce7;
-    color:#166534;
-    padding:12px;
+    margin-top:20px;
+    background:#00e5ff;
+    color:#111;
+    padding:15px;
     border-radius:10px;
-    font-weight:bold;
     text-align:center;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.complexity{
+    margin-top:25px;
+    background:rgba(255,255,255,0.12);
+    padding:15px;
+    border-radius:12px;
+}
+
+.complexity h3{
+    margin-bottom:10px;
+    color:#00e5ff;
+}
+
+.complexity ul{
+    list-style:none;
+}
+
+.complexity li{
+    padding:5px 0;
 }
